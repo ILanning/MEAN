@@ -1,0 +1,17 @@
+<div ng-controller="sessionController">
+  <h3>Put the question and options here:                                 <a href="#!/dashboard">Cancel</a></h3>
+  <form ng-controller="surveyController" ng-submit="createSurvey()" method="post">
+    <p ng-repeat="error in surveyErrors">{{error}}</p>
+    <label for="title">Question:</label>
+    <input type="text" name="title" ng-model="newSurvey.title" value="">
+    <label for="o1">Option 1:</label>
+    <input type="text" name="o1" ng-model="newSurvey.o1" value="">
+    <label for="o2">Option 2:</label>
+    <input type="text" name="o2" ng-model="newSurvey.o2" value="">
+    <label for="o3">Option 3:</label>
+    <input type="text" name="o3" ng-model="newSurvey.o3" value="">
+    <label for="o4">Option 4:</label>
+    <input type="text" name="o4" ng-model="newSurvey.o4" value="">
+    <input type="submit" value="Create Poll">
+  </form>
+</div>

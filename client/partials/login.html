@@ -1,0 +1,8 @@
+<div ng-controller="sessionController">
+  <p ng-repeat="error in errors">{{error}}</p>
+  <form ng-submit="login()" method="post">
+    <label for="name">Your Name:</label>
+    <input type="text" name="name" ng-model="newUser" value="">
+    <input type="submit" value="Login">
+  </form>
+</div>

@@ -1,0 +1,19 @@
+<div ng-controller="sessionController">
+  <a href="#!/dashboard">Go To Polls</a>
+  <div ng-controller="showSurveyController">
+    <h3>{{currSurvey.title}}</h3>
+    <p>Click the Vote button to choose one.</p>
+    <table>
+      <tr>
+        <th>Option</th>
+        <th>Current Votes</th>
+        <th>Action</th>
+      </tr>
+      <tr ng-repeat="option in currSurvey._options">
+        <td>{{option.title}}</td>
+        <td>{{option.votes}}</td>
+        <td><input type="button" ng-click="vote(option._id)" value="Vote"></td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div ng-controller="sessionController">
+  <p>Welcome, {{username}}! Current Polls: <a href="#!/create">Create a New Poll</a> <a href="#" ng-click="logout()">Log Out</a></p>
+  <div ng-controller="surveyController">
+    <input type="text" name="tableFilter" ng-model="tableFilter" placeholder="Search">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Survey Question</th>
+        <th>Date Posted</th>
+        <th>Action</th>
+      </tr>
+      <tr ng-repeat="survey in surveys | filter : tableFilter">
+        <td>{{survey._user.name}}</td>
+        <td><a href="#!/survey/{{survey._id}}">{{survey.title}}</a></td>
+        <td>{{formatDate(survey.createdAt)}}</td>
+        <td><input type="button" ng-if="survey._user._id === userID" ng-click="deleteSurvey(survey._id)" value="Delete"></td>
+      </tr>
+    </table>
+  </div>
+</div>
